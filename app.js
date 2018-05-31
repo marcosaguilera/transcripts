@@ -15,9 +15,9 @@ var app = express();//llamados
 var server = http.Server(app);
 
 var sessionMiddleware = session({
-	//store: new RedisStore({}),
+	store: new RedisStore({}),
 	//store: new RedisStore(''),
-	RedisURI.create("redis://h:pa7bf477d9c91618107877b36ce7c96c5c06d24143ff2d4bbd7c2312edaee028c@ec2-35-153-112-127.compute-1.amazonaws.com:9779"),
+	//RedisURI.create("redis://h:pa7bf477d9c91618107877b36ce7c96c5c06d24143ff2d4bbd7c2312edaee028c@ec2-35-153-112-127.compute-1.amazonaws.com:9779"),
 	secret:"rochester"
 });
 
