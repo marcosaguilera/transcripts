@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
+//mongoose.connect("mongodb://localhost/fotos");
 mongoose.connect("mongodb://localhost/fotos");
 
 var posibles_valores = ["M","F"];
