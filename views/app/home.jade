@@ -1,0 +1,19 @@
+extends ../layout.jade
+block contenido
+	div
+		.img-container
+			form.m-0.bg-primary(action="")
+				input.form-control.mr-2(id="search" type="text" placeholder="Filtrar")
+			#container
+				for imagen in imagenes
+					a(href="/app/imagenes/#{imagen.id}")
+						container
+							p= imagen.id_student
+							h4= imagen.name+" "+imagen.lastname
+	script(id="image-template" type="text/x-handlebars-template")
+		.img-container
+			a(href="/app/imagenes/{{id}}")
+				h2 {{name}}
+	script(src="/public/js/client.js")
+	script(src="/public/js/search.js")
+	script(src="/public/js/allyears.js")

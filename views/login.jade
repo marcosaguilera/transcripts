@@ -1,0 +1,38 @@
+doctype html
+html(lang='es')
+	head
+		title Certificados Rochester School
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet")
+		link(href="/public/css/app.css" rel="stylesheet")
+		script(src="/socket.io/socket.io.js")
+		script(src="/public/js/handlebars.js")
+	body
+		.col-md-6.remove-float.center-block.big-top-space
+			h1 Iniciar sesión (Login)
+			form(action="/sessions" method="POST")
+				.container-fluid
+					.form-group
+						label(for="email") Email
+						input.form-control(type="text" name="email" placeholder="Email" id="email")
+					.form-group
+						label(for="password") Contraseña
+						input.form-control(type="password" name="password" placeholder="Contraseña" id="password")
+					.row.top-space
+						.col-xs-12.col-sm-6
+							input.btn.btn-primary(type="submit" value="Entrar")
+						.col-xs-12.col-sm-6.text-right
+							a(href="/signup") No tengo cuenta
+	script.
+		var validate = ("login?message=INVALID%20USER");
+		var validate2 = ("login?error=INVALID%20EMAIL%20OR%20PASSWORD");
+		var validate3 = ("login?USUARIO%20ELIMINADO");
+		var url = location.href.split("/")[location.href.split("/").length - 1];
+		if (validate == url){
+			alert("Usuario o contraseña invalidos");
+		}else if(validate2 == url){
+			alert("Por favor ingrese sus datos para iniciar sesión");
+		}else if(validate3 == url){
+			alert("Usuario eliminado con exito");
+		}
