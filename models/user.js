@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 //mongoose.connect("mongodb://localhost/fotos");
-mongoose.connect("mongodb://localhost/fotos");
+mongoose.connect("mongodb://heroku_1vs982h4:zombie2012+@ds139950.mlab.com:39950/heroku_1vs982h4");
 
 var posibles_valores = ["M","F"];
 var email_match = [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,"Coloca un email válido"];
